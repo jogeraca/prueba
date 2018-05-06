@@ -17,12 +17,16 @@ defmodule Admin.MixProject do
 
   # Run "mix help compile.app" to learn about applications.
   def application do
+    apps = [
+      :postgrex
+    ]
+
+    extra_applications = [:logger]
+    #  mod: {Admin.Application, []}
+
     [
-      apps = [
-        :postgrex
-      ],
-      extra_applications: [:logger],
-      mod: {Admin.Application, []}
+      applications: apps ++ extra_applications
+      # mod: {Admin, []}
     ]
   end
 
